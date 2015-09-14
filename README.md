@@ -2,8 +2,7 @@
 
 <Project Description>
 
-The Blocmetrics app is powered at {https://immense-coast-4160.herokuapp.com/}[https://immense-coast-4160.herokuapp.com/]
-
+The Blocmetrics app is powered at {https://hidden-spire-6180.herokuapp.com/}
 ## Getting Started
 
 ## Software requirements
@@ -64,12 +63,12 @@ $ rails s
 
 Bug reports and feature requests can be filed with the rest for the Ruby on Rails project here:
 
-* {File Bug Reports and Features}[https://github.com/<user-name>/<project-repo>/issues]
+* {File Bug Reports and Features}[https://github.com/cuzoaru90/blocmetrics/issues]
 
 ## License
 
-<Project Name> is released under the <LICENSE-NAME> license.
+Blocmetrics is released under the <LICENSE-NAME> license.
 
 ## Copyright
 
-copyright:: (c) Copyright 2015 <Project Name>. All Rights Reserved.
+copyright:: (c) Copyright 2015 Blocmetrics. All Rights Reserved.
