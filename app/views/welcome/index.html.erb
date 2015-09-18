@@ -1,6 +1,13 @@
-
+<br><br>
 <div class = "container center-text">
 
 <h1>Blocmetrics</h1>
 <p>Track data on your applications!</p>
+
+<% if !current_user %>
+<%= button_to "Sign up", new_user_registration_path, :class => "orange-btn centered-text", 
+:method => :get %>
+<% end %>
+
 </div>
+
