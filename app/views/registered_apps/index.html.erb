@@ -1,0 +1,17 @@
+<br>
+<h1>Your registered applications</h1>
+
+<% @registered_apps.each do |app| %>
+
+<p>
+ <div class = 'row'>
+
+  <div class="col-md-2 col-md-offset-3 no-overflow"> 
+    <%= link_to app.name, app %> 
+  </div> 
+
+  </div>
+</p>
+
+ <% end %>
+
