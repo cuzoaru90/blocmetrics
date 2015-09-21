@@ -25,6 +25,31 @@ class RegisteredAppsController < ApplicationController
 
   end
 
+  def update
+     @registered_app = RegisteredApp.find(params[:id])
+     
+     if @registered_app.update_attributes(app_params)
+       flash[:notice] = "Updated the app."
+       redirect_to @registered_app
+     else
+       flash[:error] = "Could not update app. Please try again."
+       render :edit
+     end
+   end
+
+   def destroy
+     @registered_app = RegisteredApp.find(params[:id])
+ 
+     if @registered_app.destroy
+       flash[:notice] = "\"#{@registered_app.name}\" has been deleted."
+       redirect_to @registered_app
+     else
+       flash[:error] = "Could not delete the app."
+       render :show
+     end
+   end
+
+
   private
 
   def app_params

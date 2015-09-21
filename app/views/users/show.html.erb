@@ -3,16 +3,14 @@
 
 <% @apps.each do |app| %> 
 
-<p>
-
 <div class = 'row shift-down'>
 
-  <div class="col-md-2 col-md-offset-2 no-overflow"> 
+  <div class="col-md-2 col-md-offset-2"> 
     <%= link_to app.name, app %> 
   </div> 
 
-  <div class="col-md-2 col-md-offset-2 no-overflow"> 
-    <%=app.url%> 
+  <div class="col-md-2 col-md-offset-2"> 
+    <%= link_to app.url, "#{app.url}"%> 
   </div> 
 
 
