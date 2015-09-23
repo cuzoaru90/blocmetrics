@@ -5,8 +5,11 @@
 <p>Track data on your applications!</p>
 
 <% if !current_user %>
-<%= button_to "Sign up", new_user_registration_path, :class => "orange-btn centered-text", 
-:method => :get %>
+  <%= button_to "Sign up", new_user_registration_path, :class => "orange-btn centered-text", 
+  :method => :get %>
+<% else %>
+  <%= button_to "Register application", new_registered_app_path, :class => "longer orange-btn centered-text", 
+  :method => :get %>
 <% end %>
 
 </div>

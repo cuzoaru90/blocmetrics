@@ -23,3 +23,10 @@ user = User.new( name:     'Chuck Uzoaru',
                  password: 'helloworld' )
 user.skip_confirmation!
 user.save!
+
+users = User.all
+
+users.each do | user | 
+  user.registered_apps.create!( name: Faker::Lorem.word,
+                      url:  Faker::Company.logo )
+end
