@@ -1,3 +1,12 @@
 <h2> <%= @registered_app.name %></h2>
 <p> <%= link_to @registered_app.url, "#{@registered_app.url}"%> </p>
-<p> <%= @registered_app.user.name %></p>
+
+<p> Events: <%= @event_count %> </p>
+<% @events.sort.each do |key, value| %>
+<p> <%= key %> <p>
+
+<% end %>
+
+
+<!-- <p> <%= @registered_app.user.name %></p>
+ -->

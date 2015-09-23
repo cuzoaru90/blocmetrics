@@ -5,6 +5,8 @@ class RegisteredAppsController < ApplicationController
 
   def show
     @registered_app = RegisteredApp.find(params[:id])
+    @events = @registered_app.events.group_by(&:name)
+    @event_count = @events.count
   end
 
   def new
