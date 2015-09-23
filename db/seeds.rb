@@ -28,7 +28,7 @@ users = User.all
 
 users.each do | user | 
   user.registered_apps.create!( name: Faker::Lorem.word,
-                      url:  Faker::Company.logo )
+                      url:  Faker::Internet.url )
 end
 
 
