@@ -24,12 +24,17 @@ user = User.new( name:     'Chuck Uzoaru',
 user.skip_confirmation!
 user.save!
 
+user.registered_applications.create!( name: "Sample Registered Application", 
+                                      url:  "http://registered_application.com" )
+
 users = User.all
 
 users.each do | user | 
   user.registered_applications.create!( name: Faker::Lorem.word, 
                                         url:  Faker::Internet.url )
 end
+
+
 
 registered_applications = RegisteredApplication.all
 
