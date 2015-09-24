@@ -42,7 +42,7 @@ end
 group :production do
   gem 'foreman',                '~> 0.78.0'
   gem 'passenger',              '~> 5.0.16'
-  gem 'pg',                     '~> 0.18.2'
+  gem 'pg',                       '~> 0.18.1'
   gem 'rails_12factor',         '~> 0.0.3'
 end
 

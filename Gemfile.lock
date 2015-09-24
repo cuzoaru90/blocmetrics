@@ -251,7 +251,7 @@ DEPENDENCIES
   minitest-reporters (~> 1.0.11)
   nokogiri (~> 1.6.6.2)
   passenger (~> 5.0.16)
-  pg (~> 0.18.2)
+  pg (~> 0.18.1)
   populator (~> 1.0.0)
   pundit (~> 1.0.0)
   rack-cors (~> 0.4.0)
