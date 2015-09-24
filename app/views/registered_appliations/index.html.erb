@@ -1,14 +1,14 @@
 <br>
 <h2>Your registered applications</h2>
 
-<% @registered_apps.each do |app| %>
+<% @registered_applications.each do | registered_application | %>
 
-<% if app.user == current_user %>
+<% if registered_application.user == current_user %>
 <p>
  <div class = 'row'>
 
   <div class="col-md-2 col-md-offset-3"> 
-    <%= link_to app.name, app %> 
+    <%= link_to registered_application.name, registered_application %> 
   </div> 
 
  <div class="col-md-2 col-md-offset-3">

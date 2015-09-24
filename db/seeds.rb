@@ -27,20 +27,17 @@ user.save!
 users = User.all
 
 users.each do | user | 
-  user.registered_apps.create!( name: Faker::Lorem.word,
-                      url:  Faker::Internet.url )
+  user.registered_applications.create!( name: Faker::Lorem.word, 
+                                        url:  Faker::Internet.url )
 end
 
+registered_applications = RegisteredApplication.all
 
-apps = RegisteredApp.all
-
-
-apps.each do | app |
+registered_applications.each do | app |
   r = Random.new
   num = r.rand(1...8)
 
   num.times do
-  app.events.create!( name: Faker::Lorem.sentence )
+    app.events.create!( name: Faker::Lorem.sentence )
   end
-
 end

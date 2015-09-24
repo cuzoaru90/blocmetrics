@@ -1,26 +1,26 @@
-class RegisteredAppsController < ApplicationController
+class RegisteredApplicationsController < ApplicationController
   def index
-    @registered_apps = RegisteredApp.all
+    @registered_applications = RegisteredApplication.all
   end
 
   def show
-    @registered_app = RegisteredApp.find(params[:id])
-    @events = @registered_app.events.group_by(&:name)
+    @registered_application = RegisteredApplication.find(params[:id])
+    @events = @registered_application.events.group_by(&:name)
     @event_count = @events.count
   end
 
   def new
-    @registered_app = RegisteredApp.new
+    @registered_application = RegisteredApplication.new
     #authorize @registered_app
   end
 
   def create
-    @registered_app = RegisteredApp.new(app_params)
-    @registered_app.user = current_user
+    @registered_application = RegisteredApplication.new( registered_application_params )
+    @registered_application.user = current_user
 
-     if @registered_app.save
+     if @registered_application.save
        flash[:notice] = "App was registered."
-       redirect_to @registered_app
+       redirect_to @registered_application
      else
        flash[:error] = "Error. Couuld not register the app."
      end
@@ -28,11 +28,11 @@ class RegisteredAppsController < ApplicationController
   end
 
   def update
-     @registered_app = RegisteredApp.find(params[:id])
+     @registered_application = RegisteredApplication.find(params[:id])
      
-     if @registered_app.update_attributes(app_params)
+     if @registered_application.update_attributes(app_params)
        flash[:notice] = "Updated the app."
-       redirect_to @registered_app
+       redirect_to @registered_application
      else
        flash[:error] = "Could not update app. Please try again."
        render :edit
@@ -40,11 +40,11 @@ class RegisteredAppsController < ApplicationController
    end
 
    def destroy
-     @registered_app = RegisteredApp.find(params[:id])
+     @registered_app = RegisteredApplication.find(params[:id])
  
-     if @registered_app.destroy
+     if @registered_application.destroy
        flash[:notice] = "\"#{@registered_app.name}\" has been deleted."
-       redirect_to @registered_app
+       redirect_to @registered_application
      else
        flash[:error] = "Could not delete the app."
        render :show
@@ -54,8 +54,8 @@ class RegisteredAppsController < ApplicationController
 
   private
 
-  def app_params
-    params.require(:registered_app).permit(:name, :url)
+  def registered_application_params
+    params.require(:registered_application).permit(:name, :url)
   end
 
 end
