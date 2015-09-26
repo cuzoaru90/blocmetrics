@@ -42,21 +42,20 @@ end
 group :production do
   gem 'foreman',                '~> 0.78.0'
   gem 'passenger',              '~> 5.0.16'
-  gem 'pg',                     '~> 0.18.2'
+  gem 'pg',                       '~> 0.18.1'
   gem 'rails_12factor',         '~> 0.0.3'
 end
 
 group :development, :test do
   gem 'annotate',               '~> 2.6.8'
   gem 'byebug',                 '~> 4.0.5'
-  gem 'factory_girl_rails',     '~> 4.5.0'
+  gem 'capybara',               '~> 2.5.0'
   gem 'minitest',               '~> 5.5.1'
   gem 'minitest-reporters',     '~> 1.0.11'
   # gem 'poltergeist',            '~> 1.6.0'
   gem 'populator',              '~> 1.0.0'
   gem 'rack-mini-profiler',     '~> 0.9.3'
   gem 'rails-footnotes',        '>= 4.1.6', '<5'
-  gem 'rspec-rails',            '~> 3.3.3'
   gem 'selenium-webdriver',     '~> 2.45.0'
   gem 'simplecov',              '~> 0.9.2', :require => false
   gem 'spring',                 '~> 1.3.6'

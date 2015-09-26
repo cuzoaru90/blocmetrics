@@ -24,23 +24,25 @@ user = User.new( name:     'Chuck Uzoaru',
 user.skip_confirmation!
 user.save!
 
+user.registered_applications.create!( name: "Sample Registered Application", 
+                                      url:  "http://registered_application.com" )
+
 users = User.all
 
 users.each do | user | 
-  user.registered_apps.create!( name: Faker::Lorem.word,
-                      url:  Faker::Company.logo )
+  user.registered_applications.create!( name: Faker::Lorem.word, 
+                                        url:  Faker::Internet.url )
 end
 
 
-apps = RegisteredApp.all
 
+registered_applications = RegisteredApplication.all
 
-apps.each do | app |
+registered_applications.each do | app |
   r = Random.new
   num = r.rand(1...8)
 
   num.times do
-  app.events.create!( name: Faker::Lorem.sentence )
+    app.events.create!( name: Faker::Lorem.sentence )
   end
-
 end

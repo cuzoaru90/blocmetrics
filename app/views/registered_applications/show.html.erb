@@ -1,0 +1,10 @@
+<h2> <%= @registered_application.name %></h2>
+<p> <%= @registered_application.url %> </p>
+
+<p> Events: <%= @event_count %> </p>
+<% @events.sort.each do |key, value| %>
+  <p> <%= key %> <p>
+<% end %>
+
+<!-- <p> <%= @registered_application.user.name %></p>
+ -->

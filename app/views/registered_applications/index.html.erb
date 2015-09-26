@@ -1,0 +1,24 @@
+<br>
+<h2>Your registered applications</h2>
+
+<% @registered_applications.each do | registered_application | %>
+
+<% if registered_application.user == current_user %>
+<p>
+ <div class = 'row'>
+
+  <div class="col-md-2 col-md-offset-3"> 
+    <%= link_to registered_application.name, registered_application %> 
+  </div> 
+
+ <div class="col-md-2 col-md-offset-3">
+  <%= link_to "Delete app", app, method: :delete %>
+ </div>
+
+  </div>
+</p>
+
+<% end %>
+
+ <% end %>
+
