@@ -1,6 +1,8 @@
 class API::EventsController < ApplicationController
  
    skip_before_action :verify_authenticity_token
+
+   respond_to :json  
  
    def create
      registered_application = RegisteredApplication.find_by(url: request.env['HTTP_ORIGIN'])
