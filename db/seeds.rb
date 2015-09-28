@@ -46,3 +46,12 @@ registered_applications.each do | app |
     app.events.create!( name: Faker::Lorem.sentence )
   end
 end
+
+user.registered_applications.create!( name: "Bloccit", 
+                                      url:  "http://localhost:3000" )
+
+user.registered_applications.create!( name: "Blocipedia", 
+                                      url:  "http://localhost:3500" )
+
+
+
