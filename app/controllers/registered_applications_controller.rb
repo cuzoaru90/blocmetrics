@@ -28,6 +28,7 @@ class RegisteredApplicationsController < ApplicationController
     end
   end
 
+
   def update
     @registered_application = RegisteredApplication.find( params[:id] )
      
