@@ -19,7 +19,8 @@ User.destroy_all
 end
 
 user = User.new( name:     'Chuck Uzoaru', 
-                 email:    'cuzoaru90@gmail.com', 
+                 email:    'cuzoaru90@gmail.com',
+                 role:     'admin',
                  password: 'helloworld' )
 user.skip_confirmation!
 user.save!

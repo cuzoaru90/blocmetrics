@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 
+  before_action :authenticate_user!
+  before_action :admin?
+
   def index
     @users = User.paginate(page: params[:page], per_page: 10) 
   end
@@ -9,6 +12,14 @@ class UsersController < ApplicationController
     @apps = @user.registered_applications
   end
 
-  def new
+
+  private
+
+  def admin?
+    if current_user.role != 'admin'
+      flash[:notice] = "This page is restricted to the admin."
+      redirect_to welcome_index_path
+    end
   end
+
 end

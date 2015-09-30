@@ -28,8 +28,10 @@
 
  <div class = "container center-text shift-right">
 
+  <% if policy(RegisteredApplication.new).create? %>
   <%= button_to "Register application", new_registered_application_path, :class => "longer orange-btn centered-text", 
   :method => :get %>
+  <% end %>
 
 </div>
 
