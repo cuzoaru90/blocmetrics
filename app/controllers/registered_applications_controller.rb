@@ -28,13 +28,17 @@ class RegisteredApplicationsController < ApplicationController
     end
   end
 
+  def edit
+    @registered_application = RegisteredApplication.find(params[:id])
+  end
+
 
   def update
     @registered_application = RegisteredApplication.find( params[:id] )
      
     if @registered_application.update_attributes( registered_application_params )
       flash[:notice] = "Updated the app."
-      redirect_to @registered_application
+      redirect_to registered_applications_path
     else
       flash[:error] = "Could not update app. Please try again."
       render :edit
