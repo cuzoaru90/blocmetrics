@@ -1,4 +1,6 @@
 class RegisteredApplicationsController < ApplicationController
+
+  before_action :authenticate_user!
   
   def index
     @registered_applications = RegisteredApplication.all
@@ -12,7 +14,7 @@ class RegisteredApplicationsController < ApplicationController
 
   def new
     @registered_application = RegisteredApplication.new
-    #authorize @registered_app
+    authorize @registered_application
   end
 
   def create
@@ -62,5 +64,6 @@ private
   def registered_application_params
     params.require(:registered_application).permit(:name, :url)
   end
+
 
 end
